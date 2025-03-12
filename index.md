@@ -1,3 +1,4 @@
+background: #333
 ---
 Welcome to hell
 ---
