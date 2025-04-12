@@ -52,7 +52,7 @@
 - **Description**: Blasphemous 2 continues the dark and brooding saga of The Penitent One in a brutal action platformer set in a nightmarish world filled with religious iconography and Gothic horror. The game features three main weapons, each with distinctive play styles and upgrade paths. Players navigate through non-linear environments, solving puzzles and defeating challenging bosses while uncovering the twisted lore of Cvstodia. The combat is deliberate and punishing, rewarding precision and patience while penalizing mistakes harshly.
 
 ### Tails of Iron
-![Tails of Iron](tailsOfIron.jpg)
+![Tails of Iron](tailsofiron.jpg)
 - **Genre**: Action RPG, Soulslike
 - **Length**: 10-15 hours
 - **Tag**: PASS & PLAY
@@ -61,7 +61,7 @@
 - **Description**: Tails of Iron is a challenging hand-drawn RPG adventure set in a grim world populated by anthropomorphic animals. Players take on the role of Redgi, heir to the Rat Throne, who must rebuild his kingdom after a devastating attack by the merciless Frog Clan. The combat system requires careful timing with dodges, parries, and strikes while managing stamina. Players can collect various weapons and armor with different attributes and effects. The game features a cooking system for creating helpful consumables and a quest-based progression structure, all narrated with grim whimsy by Doug Cockle (known for his role as Geralt in The Witcher).
 
 ### ANIMAL WELL
-![ANIMAL WELL](animalWell.jpg)
+![ANIMAL WELL](animalwell.jpg)
 - **Genre**: Metroidvania, Puzzle Platformer
 - **Length**: 6-10 hours
 - **Tag**: PASS & PLAY
@@ -82,7 +82,7 @@
 - **Description**: Lorelei and the Laser Eyes is a surreal mystery puzzle game from the creators of Sayonara Wild Hearts. Set in a mysterious central European hotel-turned-museum, players follow a woman named Lorelei who's been invited to the estate to solve a series of enigmatic puzzles. The game features striking black and white visuals with occasional splashes of color, creating an eerie atmosphere inspired by European cinema. Gameplay involves exploring the non-linear environment, deciphering cryptic symbols, manipulating objects, and solving interconnected puzzles that often require thinking outside the box. The narrative unfolds in a dreamlike, fragmented manner that adds to the game's mysterious allure.
 
 ### Once Upon A Jester
-![Once Upon A Jester](onceUponAJester.jpg)
+![Once Upon A Jester](OnceUponAJester.jpg)
 - **Genre**: Adventure, Comedy, Performance
 - **Length**: 3-5 hours
 - **Tag**: STORY
