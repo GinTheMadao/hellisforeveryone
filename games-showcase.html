@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nintendo Switch Games Showcase</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #e60012;
+            margin-bottom: 30px;
+        }
+        .category-container {
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .category-title {
+            color: #0075c2;
+            border-bottom: 2px solid #e60012;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .category-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .game-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        .game-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .game-info {
+            padding: 15px;
+        }
+        .game-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+        .game-genre {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        .game-length {
+            font-size: 14px;
+            color: #0075c2;
+            margin: 5px 0 0 0;
+        }
+        .game-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .co-op {
+            background-color: #00a651;
+        }
+        .pass-play {
+            background-color: #f7931e;
+        }
+        .narrative {
+            background-color: #662d91;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow: auto;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 25px;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+        @keyframes modalFadeIn {
+            from {opacity: 0; transform: translateY(-30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close-btn:hover {
+            color: #e60012;
+        }
+        .modal-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .modal-title {
+            color: #e60012;
+            margin: 0 0 5px 0;
+        }
+        .modal-subtitle {
+            color: #666;
+            margin: 0;
+            font-size: 16px;
+        }
+        .modal-info {
+            margin-bottom: 20px;
+        }
+        .info-label {
+            font-weight: bold;
+            margin-right: 5px;
+            color: #0075c2;
+        }
+        .modal-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nintendo Switch Games Showcase</h1>
+    
+    <div class="category-container">
+        <h2 class="category-title">Cooperative Multiplayer Games</h2>
+        <p class="category-description">Games that support multiple players playing together simultaneously</p>
+        <div class="games-container">
+            <div class="game-card" data-game="marioWonder">
+                <div class="game-tag co-op">CO-OP</div>
+                <img class="game-image" src="SuperMarioBrosWonder.jpg" alt="Super Mario Bros. Wonder">
+                <div class="game-info">
+                    <h3 class="game-title">Super Mario Bros. Wonder</h3>
+                    <p class="game-genre">2D Platformer, Action</p>
+                    <p class="game-length">10-15 hours</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game="rogueHeroes">
+                <div class="game-tag co-op">CO-OP</div>
+                <img class="game-image" src="rogueHeroes.jpg" alt="Rogue Heroes: Ruins of Tasos">
+                <div class="game-info">
+                    <h3 class="game-title">Rogue Heroes: Ruins of Tasos</h3>
+                    <p class="game-genre">Action RPG, Roguelite</p>
+                    <p class="game-length">15-20 hours</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game="wargroove2">
+                <div class="game-tag co-op">CO-OP</div>
+                <img class="game-image" src="wargroove2.jpg" alt="Wargroove 2">
+                <div class="game-info">
+                    <h3 class="game-title">Wargroove 2</h3>
+                    <p class="game-genre">Turn-Based Strategy, Tactical</p>
+                    <p class="game-length">25-35 hours</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game="intoBreach">
+                <div class="game-tag co-op">CO-OP</div>
+                <img class="game-image" src="IntotheBreach.jpg" alt="Into the Breach">
+                <div class="game-info">
+                    <h3 class="game-title">Into the Breach</h3>
+                    <p class="game-genre">Turn-Based Strategy, Roguelike</p>
+                    <p class="game-length">10-15 hours for first victory</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="category-container">
+        <h2 class="category-title">Pass-and-Play Games</h2>
+        <p class="category-description">Games perfect for taking turns with friends, each controlling during different sections</p>
+        <div class="games-container">
+            <div class="game-card" data-game="blasphemous2">
+                <div class="game-tag pass-play">PASS & PLAY</div>
+                <img class="game-image" src="blasphemous2.jpg" alt="Blasphemous 2">
+                <div class="game-info">
+                    <h3 class="game-title">Blasphemous 2</h3>
+                    <p class="game-genre">Metroidvania, Soulslike</p>
+                    <p class="game-length">15-20 hours</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game="tailsOfIron">
+                <div class="game-tag pass-play">PASS & PLAY</div>
+                <img class="game-image" src="tailsOfIron.jpg" alt="Tails of Iron">
+                <div class="game-info">
+                    <h3 class="game-title">Tails of Iron</h3>
+                    <p class="game-genre">Action RPG, Soulslike</p>
+                    <p class="game-length">10-15 hours</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game="animalWell">
+                <div class="game-tag pass-play">PASS & PLAY</div>
+                <img class="game-image" src="animalWell.jpg" alt="ANIMAL WELL">
+                <div class="game-info">
+                    <h3 class="game-title">ANIMAL WELL</h3>
+                    <p class="game-genre">Metroidvania, Puzzle Platformer</p>
+                    <p class="game-length">6-10 hours</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="category-container">
+        <h2 class="category-title">Narrative Experiences</h2>
+        <p class="category-description">Story-rich games to experience together like an interactive movie</p>
+        <div class="games-container">
+            <div class="game-card" data-game="lorelei">
+                <div class="game-tag narrative">STORY</div>
+                <img class="game-image" src="LoreleiandtheLaserEyes.jpg" alt="Lorelei and the Laser Eyes">
+                <div class="game-info">
+                    <h3 class="game-title">Lorelei and the Laser Eyes</h3>
+                    <p class="game-genre">Puzzle, Mystery</p>
+                    <p class="game-length">10-15 hours</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game="onceUponAJester">
+                <div class="game-tag narrative">STORY</div>
+                <img class="game-image" src="onceUponAJester.jpg" alt="Once Upon A Jester">
+                <div class="game-info">
+                    <h3 class="game-title">Once Upon A Jester</h3>
+                    <p class="game-genre">Adventure, Comedy, Performance</p>
+                    <p class="game-length">3-5 hours</p>
+                </div>
+            </div>
+            
+            <div class="game-card" data-game="thankGoodness">
+                <div class="game-tag narrative">STORY</div>
+                <img class="game-image" src="ThankGoodnessYou'reHere!.jpg" alt="Thank Goodness You're Here!">
+                <div class="game-info">
+                    <h3 class="game-title">Thank Goodness You're Here!</h3>
+                    <p class="game-genre">Comedy, Adventure, Narrative</p>
+                    <p class="game-length">5-7 hours</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="Game Image">
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <p id="modalGenre" class="modal-subtitle"></p>
+            </div>
+            <div id="modalLength" class="modal-info">
+                <span class="info-label">Length:</span> <span id="lengthValue"></span>
+            </div>
+            <div id="modalMechanics" class="modal-info">
+                <span class="info-label">Mechanics:</span> <span id="mechanicsValue"></span>
+            </div>
+            <div id="modalMultiplayer" class="modal-info">
+                <span class="info-label">Multiplayer:</span> <span id="multiplayerValue"></span>
+            </div>
+            <div id="modalDescription" class="modal-info">
+                <span class="info-label">Description:</span>
+                <p id="descriptionValue"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game data
+        const gameData = {
+            blasphemous2: {
+                title: "Blasphemous 2",
+                image: "Blasphemous2.jpg",
+                genre: "Metroidvania, Soulslike, Action Platformer",
+                length: "15-20 hours for main story, 25-30 hours for completionists",
+                mechanics: "Weapon-based abilities, Penitence system, Punishing combat, Religious imagery, Skill trees",
+                multiplayer: "No local multiplayer",
+                description: "Blasphemous 2 continues the dark and brooding saga of The Penitent One in a brutal action platformer set in a nightmarish world filled with religious iconography and Gothic horror. The game features three main weapons, each with distinctive play styles and upgrade paths. Players navigate through non-linear environments, solving puzzles and defeating challenging bosses while uncovering the twisted lore of Cvstodia. The combat is deliberate and punishing, rewarding precision and patience while penalizing mistakes harshly."
+            },
+            tailsOfIron: {
+                title: "Tails of Iron",
+                image: "Tailsofiron.jpg",
+                genre: "Action RPG, Soulslike, Side-scrolling",
+                length: "10-15 hours",
+                mechanics: "Stamina-based combat, Equipment load, Dodge/block/parry, Cooking, Quest system",
+                multiplayer: "No local multiplayer",
+                description: "Tails of Iron is a challenging hand-drawn RPG adventure set in a grim world populated by anthropomorphic animals. Players take on the role of Redgi, heir to the Rat Throne, who must rebuild his kingdom after a devastating attack by the merciless Frog Clan. The combat system requires careful timing with dodges, parries, and strikes while managing stamina. Players can collect various weapons and armor with different attributes and effects. The game features a cooking system for creating helpful consumables and a quest-based progression structure, all narrated with grim whimsy by Doug Cockle (known for his role as Geralt in The Witcher)."
+            },
+            marioWonder: {
+                title: "Super Mario Bros. Wonder",
+                image: "SuperMarioBrosWonder.jpg",
+                genre: "2D Platformer, Action",
+                length: "10-15 hours for main story, 30-40 hours for completionists",
+                mechanics: "Wonder flower transformations, Character abilities, Badge system, Wonder effects, Secret levels",
+                multiplayer: "Local co-op (4 players)",
+                description: "Super Mario Bros. Wonder brings fresh innovation to the 2D Mario format with the introduction of Wonder Flowers that transform levels in surprising and unpredictable ways. Mario might turn into an elephant, pipes might come alive, or the entire perspective could shift. The game features multiple playable characters including Mario, Luigi, Peach, Daisy, and various Toads and Yoshis, each with subtle differences in ability. The new badge system allows players to equip special powers like wall-jumping or grappling hooks to customize their playstyle. With multiple worlds to explore and numerous secret levels to discover, the game offers substantial replay value, especially when played cooperatively with friends."
+            },
+            animalWell: {
+                title: "ANIMAL WELL",
+                image: "animalwell.jpg",
+                genre: "Metroidvania, Puzzle Platformer, Adventure",
+                length: "6-10 hours",
+                mechanics: "Ability-based progression, Environmental puzzles, Hidden secrets, Surreal environments",
+                multiplayer: "No local multiplayer",
+                description: "ANIMAL WELL is a meticulously crafted puzzle-platformer with an emphasis on discovery and exploration. Set in a mysterious, labyrinthine well filled with animal spirits, the game combines tight platforming controls with inventive puzzle design. Players gradually acquire new tools and abilities that let them interact with the environment in increasingly complex ways. The surreal pixel art creates an otherworldly atmosphere as players delve deeper into the well, uncovering its secrets. The game is designed with multiple layers of hidden content, rewarding observant players who take the time to experiment and thoroughly explore its interconnected spaces."
+            },
+            rogueHeroes: {
+                title: "Rogue Heroes: Ruins of Tasos",
+                image: "rogueheroes.jpg",
+                genre: "Action RPG, Roguelite, Adventure",
+                length: "15-20 hours",
+                mechanics: "Procedural dungeons, Village building, Character classes, Ability upgrades",
+                multiplayer: "Local co-op (up to 4 players)",
+                description: "Rogue Heroes: Ruins of Tasos combines roguelite elements with town-building and classic Zelda-inspired dungeon crawling. Players explore procedurally generated dungeons filled with monsters, traps, and puzzles while collecting gems that can be used to rebuild and upgrade their village hub. The village improvements in turn unlock new character classes, abilities, and items for future dungeon runs. With multiple character classes to master and the ability to switch between them, the game offers variety in playstyles from heavy-hitting warriors to ranged mages. The entire adventure can be played cooperatively, with dungeons scaling in difficulty to match the number of players."
+            },
+            lorelei: {
+                title: "Lorelei and the Laser Eyes",
+                image: "LoreleiandtheLaserEyes.jpg",
+                genre: "Puzzle, Mystery, Adventure",
+                length: "10-15 hours",
+                mechanics: "Environmental puzzles, Perspective manipulation, Hidden clues, Non-linear exploration",
+                multiplayer: "No local multiplayer",
+                description: "Lorelei and the Laser Eyes is a surreal mystery puzzle game from the creators of Sayonara Wild Hearts. Set in a mysterious central European hotel-turned-museum, players follow a woman named Lorelei who's been invited to the estate to solve a series of enigmatic puzzles. The game features striking black and white visuals with occasional splashes of color, creating an eerie atmosphere inspired by European cinema. Gameplay involves exploring the non-linear environment, deciphering cryptic symbols, manipulating objects, and solving interconnected puzzles that often require thinking outside the box. The narrative unfolds in a dreamlike, fragmented manner that adds to the game's mysterious allure."
+            },
+            intoBreach: {
+                title: "Into the Breach",
+                image: "IntotheBreach.jpg",
+                genre: "Turn-Based Strategy, Roguelike, Tactical",
+                length: "10-15 hours for first victory, 40+ hours for mastery",
+                mechanics: "Grid-based combat, Future attack telegraphing, Mech customization, Timeline manipulation",
+                multiplayer: "Local co-op (shared controls)",
+                description: "Into the Breach is a refined tactical strategy game from the creators of FTL. Players control a squad of time-traveling mechs sent to combat an alien threat called the Vek. The game takes place on small grid-based maps where every enemy move is telegraphed one turn in advance, turning each battle into a precise puzzle. The goal isn't just to defeat enemies but to protect civilian buildings, as their destruction lowers the power grid which serves as your overall health bar. Each run features procedurally generated challenges across different islands, and when defeat is inevitable, one pilot can be sent back in time to start a new timeline with their experience intact. With multiple unlockable mech squads that completely change playstyle, the game offers tremendous strategic depth in a deceptively compact package."
+            },
+            wargroove2: {
+                title: "Wargroove 2",
+                image: "Wargroove2.jpg",
+                genre: "Turn-Based Strategy, Tactical, Fantasy",
+                length: "25-35 hours for main campaign",
+                mechanics: "Commander powers, Unit management, Campaign creation, Faction differences, Co-op campaign",
+                multiplayer: "Local multiplayer (up to 4 players), Co-op campaign (2 players)",
+                description: "Wargroove 2 expands on its predecessor's pixel-art turn-based strategy gameplay with new factions, commanders, and game modes. The game features three distinct campaigns following different factions in a fantasy world of warring kingdoms. A key mechanic is the 'groove' system where commanders build up power during battle to unleash special abilities that can turn the tide of war. The sequel introduces the 'Conquest' system, a roguelike mode where players make strategic choices along branching paths. Additional features include a robust level editor for creating custom maps and campaigns, and various multiplayer options including a co-op campaign designed specifically for two players. With its charming art style and deep tactical gameplay, Wargroove 2 appeals to fans of classic strategy games like Advance Wars."
+            },
+            onceUponAJester: {
+                title: "Once Upon A Jester",
+                image: "OnceUponAJester.jpg",
+                genre: "Adventure, Comedy, Performance",
+                length: "3-5 hours",
+                mechanics: "Improvisation mechanics, Musical performances, Character interactions, Humor-focused",
+                multiplayer: "No local multiplayer",
+                description: "Once Upon A Jester is a colorful and whimsical adventure game that follows the journey of two friends, Jester and Sok, who devise a plan to steal the Royal Diamond by becoming famous theater performers. Players travel from town to town putting on improvised plays, where success depends on reading the audience and adapting performances to their tastes. The game features musical performances, quirky character interactions, and a charming hand-drawn art style. With its emphasis on humor and character-driven storytelling, the short but sweet adventure offers a joyful experience focused on creativity and friendship rather than traditional puzzle-solving or combat."
+            },
+            thankGoodness: {
+                title: "Thank Goodness You're Here!",
+                image: "ThankGoodnessYou'reHere!.jpg",
+                genre: "Comedy, Adventure, Narrative",
+                length: "5-7 hours",
+                mechanics: "Absurdist humor, Environmental interactions, Improvisation, NPC reactions",
+                multiplayer: "No local multiplayer",
+                description: "Thank Goodness You're Here! is a comedy adventure game with a unique premise: you're always the right person in the wrong place. Each level begins with someone exclaiming the title phrase and immediately putting you to work as if you're exactly who they've been waiting for, whether that's a firefighter, a chef, or something far more bizarre. The game embraces absurdist humor and improvisation as you navigate increasingly surreal situations using whatever objects you can find. The distinctive art style combines 2D characters with 3D environments, and the game rewards experimentation with hilarious NPC reactions to your actions. Rather than traditional puzzles with single solutions, the game encourages creative approaches to each scenario."
+            }
+        };
+
+        // Get modal elements
+        const modal = document.getElementById("gameModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalGenre = document.getElementById("modalGenre");
+        const lengthValue = document.getElementById("lengthValue");
+        const mechanicsValue = document.getElementById("mechanicsValue");
+        const multiplayerValue = document.getElementById("multiplayerValue");
+        const descriptionValue = document.getElementById("descriptionValue");
+        const closeBtn = document.querySelector(".close-btn");
+
+        // Add click event to all game cards
+        document.querySelectorAll(".game-card").forEach(card => {
+            card.addEventListener("click", function() {
+                const gameId = this.getAttribute("data-game");
+                const game = gameData[gameId];
+                
+                // Populate modal with game data
+                modalImage.src = game.image;
+                modalImage.alt = game.title;
+                modalTitle.textContent = game.title;
+                modalGenre.textContent = game.genre;
+                lengthValue.textContent = game.length;
+                mechanicsValue.textContent = game.mechanics;
+                multiplayerValue.textContent = game.multiplayer;
+                descriptionValue.textContent = game.description;
+                
+                // Show modal
+                modal.style.display = "block";
+                
+                // Prevent scrolling on body
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        // Close modal when clicking the close button
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+
+        // Close modal with Escape key
+        window.addEventListener("keydown", function(event) {
+            if (event.key === "Escape" && modal.style.display === "block") {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    </script>
+</body>
+</html>
