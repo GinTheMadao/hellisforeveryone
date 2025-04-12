@@ -13,7 +13,7 @@
 - **Description**: Super Mario Bros. Wonder brings fresh innovation to the 2D Mario format with the introduction of Wonder Flowers that transform levels in surprising and unpredictable ways. Mario might turn into an elephant, pipes might come alive, or the entire perspective could shift. The game features multiple playable characters including Mario, Luigi, Peach, Daisy, and various Toads and Yoshis, each with subtle differences in ability. The new badge system allows players to equip special powers like wall-jumping or grappling hooks to customize their playstyle. With multiple worlds to explore and numerous secret levels to discover, the game offers substantial replay value, especially when played cooperatively with friends.
 
 ### Rogue Heroes: Ruins of Tasos
-![Rogue Heroes: Ruins of Tasos](rogueHeroes.jpg)
+![Rogue Heroes: Ruins of Tasos](RogueHeroes.jpg)
 - **Genre**: Action RPG, Roguelite
 - **Length**: 15-20 hours
 - **Tag**: CO-OP
@@ -22,7 +22,7 @@
 - **Description**: Rogue Heroes: Ruins of Tasos combines roguelite elements with town-building and classic Zelda-inspired dungeon crawling. Players explore procedurally generated dungeons filled with monsters, traps, and puzzles while collecting gems that can be used to rebuild and upgrade their village hub. The village improvements in turn unlock new character classes, abilities, and items for future dungeon runs. With multiple character classes to master and the ability to switch between them, the game offers variety in playstyles from heavy-hitting warriors to ranged mages. The entire adventure can be played cooperatively, with dungeons scaling in difficulty to match the number of players.
 
 ### Wargroove 2
-![Wargroove 2](wargroove2.jpg)
+![Wargroove 2](Wargroove2.jpg)
 - **Genre**: Turn-Based Strategy, Tactical
 - **Length**: 25-35 hours
 - **Tag**: CO-OP
